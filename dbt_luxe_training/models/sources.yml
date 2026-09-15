@@ -1,0 +1,12 @@
+version: 2
+sources:
+  - name: raw
+    database: LUXE_TRAINING
+    schema: RAW
+    tables:
+      - name: products
+      - name: stores
+      - name: customers_dyn
+      - name: sales
+      - name: inventory
+      - name: suppliers

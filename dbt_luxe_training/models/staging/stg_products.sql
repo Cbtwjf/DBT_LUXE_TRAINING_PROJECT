@@ -1,0 +1,1 @@
+select product_id, sku, category, collection, unit_price, supplier_name from {{ source('raw','products') }}

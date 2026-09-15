@@ -1,0 +1,1 @@
+select store_id, store_name, city, country, store_type from {{ source('raw','stores') }}

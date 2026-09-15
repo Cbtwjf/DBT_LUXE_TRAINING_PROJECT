@@ -1,0 +1,12 @@
+luxe_training:
+  target: dwh
+  outputs:
+    dwh:
+      type: snowflake
+      account: 'not needed'
+      user: 'not needed'
+      role: accountadmin
+      database: luxe_training
+      schema: dwh
+      warehouse: my_wh_hermes
+      threads: 8
