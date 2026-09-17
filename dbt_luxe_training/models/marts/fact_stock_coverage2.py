@@ -30,7 +30,7 @@ def model(dbt, session):
             "STOCK_COVERAGE_DAYS",
             F.when(
                 F.col("AVG_DAILY_SALES") > 0,
-                F.col("STOCK_AVAILABLE")
+                F.col("STOCK_QTY")
                 / F.col("AVG_DAILY_SALES")
             ).otherwise(F.lit(None))
         )

@@ -1,0 +1,1 @@
+select * from luxe_training.dwh.stg_customers

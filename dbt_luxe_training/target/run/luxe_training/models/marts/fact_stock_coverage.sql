@@ -1,4 +1,10 @@
-SELECT
+
+  
+    
+
+        create or replace transient table luxe_training.dwh.fact_stock_coverage
+         as
+        (SELECT
     i.product_id,
     i.store_id,
     i.stock_qty,
@@ -11,8 +17,11 @@ SELECT
         ELSE NULL
     END AS stock_coverage_days
 
-FROM {{ ref('int_inventory_current') }} i
+FROM luxe_training.dwh.int_inventory_current i
 
-LEFT JOIN {{ ref('int_sales_30d') }} s
+LEFT JOIN luxe_training.dwh.int_sales_30d s
     ON i.product_id = s.product_id
     AND i.store_id = s.store_id
+        );
+      
+  
