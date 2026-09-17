@@ -10,4 +10,4 @@ WHERE sale_date >= DATEADD(day, -30, CURRENT_DATE())
 
 GROUP BY
     product_id,
-    store_idselect * from {{ ref('stg_sales') }}
+    store_id
