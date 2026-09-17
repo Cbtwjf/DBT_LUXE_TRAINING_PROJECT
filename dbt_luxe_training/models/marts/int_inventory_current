@@ -1,7 +1,7 @@
 SELECT
     product_id,
     store_id,
-    stock_available
+    stock_qty
 
 FROM {{ ref('stg_inventory') }}
 
