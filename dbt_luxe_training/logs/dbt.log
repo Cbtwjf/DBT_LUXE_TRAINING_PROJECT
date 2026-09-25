@@ -4515,3 +4515,584 @@ GROUP BY
 [0m07:54:57.336520 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.1879954, "process_in_blocks": "0", "process_kernel_time": 0.77, "process_mem_max_rss": "477660", "process_out_blocks": "0", "process_user_time": 3.98}
 [0m07:54:57.337144 [debug] [Dummy-1   ]: Command `cli run` succeeded at 07:54:57.336890 after 4.19 seconds
 [0m07:54:57.337711 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:56:54.521826 | bc987da9-df54-4920-8a16-55957411869f ==============================
+[0m07:56:54.521826 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:56:54.522613 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt_effective_profiles_97g1yt57', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m07:56:54.788192 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:56:55.309517 [debug] [Dummy-1   ]: checksum: 7a8296c70615f566de89055485ae13d89ed1d40af3cf21b3b72f2284f73c401a, vars: {}, profile: , target: dwh, version: 1.9.4
+[0m07:56:55.548932 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:56:55.549493 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:56:55.739083 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:56:55.740925 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:56:55.774305 [info ] [Dummy-1   ]: Found 16 models, 7 data tests, 6 sources, 474 macros
+[0m07:56:55.776996 [info ] [Dummy-1   ]: 
+[0m07:56:55.777525 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dwh')
+[0m07:56:55.777981 [info ] [Dummy-1   ]: 
+[0m07:56:55.778680 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:56:55.785280 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_luxe_training_dwh'
+[0m07:56:55.889323 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m07:56:55.889855 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:56:55.890317 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:56:56.324241 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.434 seconds
+[0m07:56:56.328715 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m07:56:56.329224 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+show objects in luxe_training.dwh
+    limit 10000
+    
+;
+[0m07:56:56.443505 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 0.114 seconds
+[0m07:56:56.445851 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m07:56:56.446317 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:56:56.511103 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.064 seconds
+[0m07:56:56.531524 [debug] [Thread-2 (]: Began running node model.luxe_training.stg_customers
+[0m07:56:56.532119 [debug] [Thread-3 (]: Began running node model.luxe_training.stg_inventory
+[0m07:56:56.532656 [debug] [Thread-4 (]: Began running node model.luxe_training.stg_products
+[0m07:56:56.533317 [debug] [Thread-5 (]: Began running node model.luxe_training.stg_sales
+[0m07:56:56.533868 [debug] [Thread-6 (]: Began running node model.luxe_training.stg_stores
+[0m07:56:56.534435 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_luxe_training_dwh, now model.luxe_training.stg_customers)
+[0m07:56:56.535152 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.luxe_training.stg_inventory'
+[0m07:56:56.535804 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.luxe_training.stg_products'
+[0m07:56:56.536407 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.luxe_training.stg_sales'
+[0m07:56:56.537012 [debug] [Thread-6 (]: Acquiring new snowflake connection 'model.luxe_training.stg_stores'
+[0m07:56:56.537515 [debug] [Thread-2 (]: Began compiling node model.luxe_training.stg_customers
+[0m07:56:56.537988 [debug] [Thread-3 (]: Began compiling node model.luxe_training.stg_inventory
+[0m07:56:56.538468 [debug] [Thread-4 (]: Began compiling node model.luxe_training.stg_products
+[0m07:56:56.538974 [debug] [Thread-5 (]: Began compiling node model.luxe_training.stg_sales
+[0m07:56:56.539435 [debug] [Thread-6 (]: Began compiling node model.luxe_training.stg_stores
+[0m07:56:56.547885 [debug] [Thread-2 (]: Writing injected SQL for node "model.luxe_training.stg_customers"
+[0m07:56:56.551831 [debug] [Thread-3 (]: Writing injected SQL for node "model.luxe_training.stg_inventory"
+[0m07:56:56.556638 [debug] [Thread-4 (]: Writing injected SQL for node "model.luxe_training.stg_products"
+[0m07:56:56.560555 [debug] [Thread-5 (]: Writing injected SQL for node "model.luxe_training.stg_sales"
+[0m07:56:56.564372 [debug] [Thread-6 (]: Writing injected SQL for node "model.luxe_training.stg_stores"
+[0m07:56:56.565358 [debug] [Thread-2 (]: Began executing node model.luxe_training.stg_customers
+[0m07:56:56.566135 [debug] [Thread-3 (]: Began executing node model.luxe_training.stg_inventory
+[0m07:56:56.566986 [debug] [Thread-4 (]: Began executing node model.luxe_training.stg_products
+[0m07:56:56.567738 [debug] [Thread-5 (]: Began executing node model.luxe_training.stg_sales
+[0m07:56:56.568694 [debug] [Thread-2 (]: Finished running node model.luxe_training.stg_customers
+[0m07:56:56.569219 [debug] [Thread-6 (]: Began executing node model.luxe_training.stg_stores
+[0m07:56:56.569947 [debug] [Thread-3 (]: Finished running node model.luxe_training.stg_inventory
+[0m07:56:56.570693 [debug] [Thread-4 (]: Finished running node model.luxe_training.stg_products
+[0m07:56:56.574605 [debug] [Thread-2 (]: Began running node model.luxe_training.int_inventory_current
+[0m07:56:56.572418 [debug] [Thread-8 (]: Began running node model.luxe_training.dim_customer
+[0m07:56:56.573167 [debug] [Thread-6 (]: Finished running node model.luxe_training.stg_stores
+[0m07:56:56.574082 [debug] [Thread-7 (]: Began running node model.luxe_training.fact_inventory
+[0m07:56:56.571482 [debug] [Thread-5 (]: Finished running node model.luxe_training.stg_sales
+[0m07:56:56.575459 [debug] [Thread-3 (]: Began running node model.luxe_training.dim_product
+[0m07:56:56.576100 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.luxe_training.stg_customers, now model.luxe_training.int_inventory_current)
+[0m07:56:56.576774 [debug] [Thread-8 (]: Acquiring new snowflake connection 'model.luxe_training.dim_customer'
+[0m07:56:56.577616 [debug] [Thread-9 (]: Began running node model.luxe_training.dim_store
+[0m07:56:56.578278 [debug] [Thread-7 (]: Acquiring new snowflake connection 'model.luxe_training.fact_inventory'
+[0m07:56:56.579138 [debug] [Thread-6 (]: Began running node model.luxe_training.fact_sales
+[0m07:56:56.579633 [debug] [Thread-4 (]: Began running node model.luxe_training.int_sales_30d
+[0m07:56:56.580349 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.luxe_training.stg_inventory, now model.luxe_training.dim_product)
+[0m07:56:56.580892 [debug] [Thread-2 (]: Began compiling node model.luxe_training.int_inventory_current
+[0m07:56:56.581388 [debug] [Thread-8 (]: Began compiling node model.luxe_training.dim_customer
+[0m07:56:56.582016 [debug] [Thread-9 (]: Acquiring new snowflake connection 'model.luxe_training.dim_store'
+[0m07:56:56.582549 [debug] [Thread-7 (]: Began compiling node model.luxe_training.fact_inventory
+[0m07:56:56.583204 [debug] [Thread-6 (]: Re-using an available connection from the pool (formerly model.luxe_training.stg_stores, now model.luxe_training.fact_sales)
+[0m07:56:56.583743 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.luxe_training.stg_products, now model.luxe_training.int_sales_30d)
+[0m07:56:56.584219 [debug] [Thread-3 (]: Began compiling node model.luxe_training.dim_product
+[0m07:56:56.588118 [debug] [Thread-2 (]: Writing injected SQL for node "model.luxe_training.int_inventory_current"
+[0m07:56:56.592127 [debug] [Thread-8 (]: Writing injected SQL for node "model.luxe_training.dim_customer"
+[0m07:56:56.592691 [debug] [Thread-9 (]: Began compiling node model.luxe_training.dim_store
+[0m07:56:56.597765 [debug] [Thread-7 (]: Writing injected SQL for node "model.luxe_training.fact_inventory"
+[0m07:56:56.598271 [debug] [Thread-6 (]: Began compiling node model.luxe_training.fact_sales
+[0m07:56:56.598757 [debug] [Thread-4 (]: Began compiling node model.luxe_training.int_sales_30d
+[0m07:56:56.602417 [debug] [Thread-3 (]: Writing injected SQL for node "model.luxe_training.dim_product"
+[0m07:56:56.603515 [debug] [Thread-2 (]: Began executing node model.luxe_training.int_inventory_current
+[0m07:56:56.607259 [debug] [Thread-9 (]: Writing injected SQL for node "model.luxe_training.dim_store"
+[0m07:56:56.607830 [debug] [Thread-8 (]: Began executing node model.luxe_training.dim_customer
+[0m07:56:56.611725 [debug] [Thread-6 (]: Writing injected SQL for node "model.luxe_training.fact_sales"
+[0m07:56:56.612249 [debug] [Thread-7 (]: Began executing node model.luxe_training.fact_inventory
+[0m07:56:56.616007 [debug] [Thread-4 (]: Writing injected SQL for node "model.luxe_training.int_sales_30d"
+[0m07:56:56.617081 [debug] [Thread-2 (]: Finished running node model.luxe_training.int_inventory_current
+[0m07:56:56.617514 [debug] [Thread-3 (]: Began executing node model.luxe_training.dim_product
+[0m07:56:56.618517 [debug] [Thread-8 (]: Finished running node model.luxe_training.dim_customer
+[0m07:56:56.619122 [debug] [Thread-9 (]: Began executing node model.luxe_training.dim_store
+[0m07:56:56.620127 [debug] [Thread-7 (]: Finished running node model.luxe_training.fact_inventory
+[0m07:56:56.620627 [debug] [Thread-6 (]: Began executing node model.luxe_training.fact_sales
+[0m07:56:56.621481 [debug] [Thread-4 (]: Began executing node model.luxe_training.int_sales_30d
+[0m07:56:56.622339 [debug] [Thread-3 (]: Finished running node model.luxe_training.dim_product
+[0m07:56:56.623352 [debug] [Thread-9 (]: Finished running node model.luxe_training.dim_store
+[0m07:56:56.624227 [debug] [Thread-5 (]: Began running node model.luxe_training.int_inventory_stockout
+[0m07:56:56.624978 [debug] [Thread-6 (]: Finished running node model.luxe_training.fact_sales
+[0m07:56:56.625712 [debug] [Thread-4 (]: Finished running node model.luxe_training.int_sales_30d
+[0m07:56:56.626578 [debug] [Thread-8 (]: Began running node test.luxe_training.not_null_dim_product_product_id.02b1f06816
+[0m07:56:56.627139 [debug] [Thread-7 (]: Began running node test.luxe_training.unique_dim_product_product_id.46495bf7fe
+[0m07:56:56.627953 [debug] [Thread-3 (]: Began running node test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0
+[0m07:56:56.628483 [debug] [Thread-2 (]: Began running node test.luxe_training.unique_dim_store_store_id.90e408e197
+[0m07:56:56.629054 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.luxe_training.stg_sales, now model.luxe_training.int_inventory_stockout)
+[0m07:56:56.629924 [debug] [Thread-9 (]: Began running node test.luxe_training.not_null_fact_sales_quantity.123217c37f
+[0m07:56:56.630406 [debug] [Thread-6 (]: Began running node test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100
+[0m07:56:56.630869 [debug] [Thread-4 (]: Began running node test.luxe_training.unique_fact_sales_sale_id.16dc554bac
+[0m07:56:56.631687 [debug] [Thread-8 (]: Re-using an available connection from the pool (formerly model.luxe_training.dim_customer, now test.luxe_training.not_null_dim_product_product_id.02b1f06816)
+[0m07:56:56.632300 [debug] [Thread-7 (]: Re-using an available connection from the pool (formerly model.luxe_training.fact_inventory, now test.luxe_training.unique_dim_product_product_id.46495bf7fe)
+[0m07:56:56.632895 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.luxe_training.dim_product, now test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0)
+[0m07:56:56.633436 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.luxe_training.int_inventory_current, now test.luxe_training.unique_dim_store_store_id.90e408e197)
+[0m07:56:56.633945 [debug] [Thread-5 (]: Began compiling node model.luxe_training.int_inventory_stockout
+[0m07:56:56.634494 [debug] [Thread-9 (]: Re-using an available connection from the pool (formerly model.luxe_training.dim_store, now test.luxe_training.not_null_fact_sales_quantity.123217c37f)
+[0m07:56:56.635096 [debug] [Thread-6 (]: Re-using an available connection from the pool (formerly model.luxe_training.fact_sales, now test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100)
+[0m07:56:56.635634 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.luxe_training.int_sales_30d, now test.luxe_training.unique_fact_sales_sale_id.16dc554bac)
+[0m07:56:56.636149 [debug] [Thread-8 (]: Began compiling node test.luxe_training.not_null_dim_product_product_id.02b1f06816
+[0m07:56:56.636652 [debug] [Thread-7 (]: Began compiling node test.luxe_training.unique_dim_product_product_id.46495bf7fe
+[0m07:56:56.637136 [debug] [Thread-3 (]: Began compiling node test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0
+[0m07:56:56.637666 [debug] [Thread-2 (]: Began compiling node test.luxe_training.unique_dim_store_store_id.90e408e197
+[0m07:56:56.643229 [debug] [Thread-5 (]: Writing injected SQL for node "model.luxe_training.int_inventory_stockout"
+[0m07:56:56.643845 [debug] [Thread-9 (]: Began compiling node test.luxe_training.not_null_fact_sales_quantity.123217c37f
+[0m07:56:56.644354 [debug] [Thread-6 (]: Began compiling node test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100
+[0m07:56:56.644864 [debug] [Thread-4 (]: Began compiling node test.luxe_training.unique_fact_sales_sale_id.16dc554bac
+[0m07:56:56.657771 [debug] [Thread-8 (]: Writing injected SQL for node "test.luxe_training.not_null_dim_product_product_id.02b1f06816"
+[0m07:56:56.665109 [debug] [Thread-7 (]: Writing injected SQL for node "test.luxe_training.unique_dim_product_product_id.46495bf7fe"
+[0m07:56:56.669947 [debug] [Thread-3 (]: Writing injected SQL for node "test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0"
+[0m07:56:56.674949 [debug] [Thread-2 (]: Writing injected SQL for node "test.luxe_training.unique_dim_store_store_id.90e408e197"
+[0m07:56:56.681438 [debug] [Thread-9 (]: Writing injected SQL for node "test.luxe_training.not_null_fact_sales_quantity.123217c37f"
+[0m07:56:56.681928 [debug] [Thread-5 (]: Began executing node model.luxe_training.int_inventory_stockout
+[0m07:56:56.686853 [debug] [Thread-6 (]: Writing injected SQL for node "test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100"
+[0m07:56:56.691648 [debug] [Thread-4 (]: Writing injected SQL for node "test.luxe_training.unique_fact_sales_sale_id.16dc554bac"
+[0m07:56:56.692615 [debug] [Thread-8 (]: Began executing node test.luxe_training.not_null_dim_product_product_id.02b1f06816
+[0m07:56:56.693254 [debug] [Thread-7 (]: Began executing node test.luxe_training.unique_dim_product_product_id.46495bf7fe
+[0m07:56:56.694185 [debug] [Thread-3 (]: Began executing node test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0
+[0m07:56:56.694817 [debug] [Thread-2 (]: Began executing node test.luxe_training.unique_dim_store_store_id.90e408e197
+[0m07:56:56.695761 [debug] [Thread-5 (]: Finished running node model.luxe_training.int_inventory_stockout
+[0m07:56:56.696263 [debug] [Thread-9 (]: Began executing node test.luxe_training.not_null_fact_sales_quantity.123217c37f
+[0m07:56:56.697200 [debug] [Thread-6 (]: Began executing node test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100
+[0m07:56:56.698026 [debug] [Thread-8 (]: Finished running node test.luxe_training.not_null_dim_product_product_id.02b1f06816
+[0m07:56:56.698534 [debug] [Thread-4 (]: Began executing node test.luxe_training.unique_fact_sales_sale_id.16dc554bac
+[0m07:56:56.699341 [debug] [Thread-7 (]: Finished running node test.luxe_training.unique_dim_product_product_id.46495bf7fe
+[0m07:56:56.700097 [debug] [Thread-3 (]: Finished running node test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0
+[0m07:56:56.700830 [debug] [Thread-2 (]: Finished running node test.luxe_training.unique_dim_store_store_id.90e408e197
+[0m07:56:56.701399 [debug] [Thread-5 (]: Began running node model.luxe_training.fact_stock_coverage
+[0m07:56:56.702382 [debug] [Thread-9 (]: Finished running node test.luxe_training.not_null_fact_sales_quantity.123217c37f
+[0m07:56:56.703191 [debug] [Thread-6 (]: Finished running node test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100
+[0m07:56:56.703731 [debug] [Thread-8 (]: Began running node model.luxe_training.fact_stock_coverage2
+[0m07:56:56.704511 [debug] [Thread-4 (]: Finished running node test.luxe_training.unique_fact_sales_sale_id.16dc554bac
+[0m07:56:56.705073 [debug] [Thread-7 (]: Began running node model.luxe_training.fact_stockout_rate
+[0m07:56:56.705977 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.luxe_training.int_inventory_stockout, now model.luxe_training.fact_stock_coverage)
+[0m07:56:56.706962 [debug] [Thread-8 (]: Re-using an available connection from the pool (formerly test.luxe_training.not_null_dim_product_product_id.02b1f06816, now model.luxe_training.fact_stock_coverage2)
+[0m07:56:56.707722 [debug] [Thread-7 (]: Re-using an available connection from the pool (formerly test.luxe_training.unique_dim_product_product_id.46495bf7fe, now model.luxe_training.fact_stockout_rate)
+[0m07:56:56.708255 [debug] [Thread-5 (]: Began compiling node model.luxe_training.fact_stock_coverage
+[0m07:56:56.708742 [debug] [Thread-8 (]: Began compiling node model.luxe_training.fact_stock_coverage2
+[0m07:56:56.709190 [debug] [Thread-7 (]: Began compiling node model.luxe_training.fact_stockout_rate
+[0m07:56:56.713065 [debug] [Thread-5 (]: Writing injected SQL for node "model.luxe_training.fact_stock_coverage"
+[0m07:56:56.737805 [debug] [Thread-8 (]: Writing injected SQL for node "model.luxe_training.fact_stock_coverage2"
+[0m07:56:56.741413 [debug] [Thread-7 (]: Writing injected SQL for node "model.luxe_training.fact_stockout_rate"
+[0m07:56:56.742430 [debug] [Thread-5 (]: Began executing node model.luxe_training.fact_stock_coverage
+[0m07:56:56.743368 [debug] [Thread-8 (]: Began executing node model.luxe_training.fact_stock_coverage2
+[0m07:56:56.744185 [debug] [Thread-5 (]: Finished running node model.luxe_training.fact_stock_coverage
+[0m07:56:56.744739 [debug] [Thread-7 (]: Began executing node model.luxe_training.fact_stockout_rate
+[0m07:56:56.745488 [debug] [Thread-8 (]: Finished running node model.luxe_training.fact_stock_coverage2
+[0m07:56:56.746369 [debug] [Thread-7 (]: Finished running node model.luxe_training.fact_stockout_rate
+[0m07:56:56.749456 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:56:56.749951 [debug] [Dummy-1   ]: Connection 'test.luxe_training.unique_dim_store_store_id.90e408e197' was properly closed.
+[0m07:56:56.750346 [debug] [Dummy-1   ]: Connection 'test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0' was properly closed.
+[0m07:56:56.750717 [debug] [Dummy-1   ]: Connection 'test.luxe_training.unique_fact_sales_sale_id.16dc554bac' was properly closed.
+[0m07:56:56.751158 [debug] [Dummy-1   ]: Connection 'model.luxe_training.fact_stock_coverage' was properly closed.
+[0m07:56:56.751540 [debug] [Dummy-1   ]: Connection 'test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100' was properly closed.
+[0m07:56:56.751920 [debug] [Dummy-1   ]: Connection 'model.luxe_training.fact_stock_coverage2' was properly closed.
+[0m07:56:56.752290 [debug] [Dummy-1   ]: Connection 'model.luxe_training.fact_stockout_rate' was properly closed.
+[0m07:56:56.752694 [debug] [Dummy-1   ]: Connection 'test.luxe_training.not_null_fact_sales_quantity.123217c37f' was properly closed.
+[0m07:56:56.755604 [debug] [Dummy-1   ]: Command end result
+[0m07:56:56.780667 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:56:56.782249 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:56:56.789370 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:56:56.790870 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 2.3402715, "process_in_blocks": "0", "process_kernel_time": 0.78, "process_mem_max_rss": "488844", "process_out_blocks": "0", "process_user_time": 4.1}
+[0m07:56:56.791506 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 07:56:56.791266 after 2.34 seconds
+[0m07:56:56.791995 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 08:18:21.335969 | c1f45d2a-0f07-484d-91ae-8325129fc773 ==============================
+[0m08:18:21.335969 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m08:18:21.336797 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt_effective_profiles_nxmfm6ks', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m08:18:21.604798 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m08:18:22.134074 [debug] [Dummy-1   ]: checksum: 7a8296c70615f566de89055485ae13d89ed1d40af3cf21b3b72f2284f73c401a, vars: {}, profile: , target: dwh, version: 1.9.4
+[0m08:18:22.365255 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m08:18:22.366119 [debug] [Dummy-1   ]: Partial parsing: added file: luxe_training://models/marts/fact_stock.sql
+[0m08:18:22.875392 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:18:22.877465 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:18:22.920700 [info ] [Dummy-1   ]: Found 17 models, 7 data tests, 6 sources, 474 macros
+[0m08:18:22.923261 [info ] [Dummy-1   ]: 
+[0m08:18:22.923843 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dwh')
+[0m08:18:22.924291 [info ] [Dummy-1   ]: 
+[0m08:18:22.924998 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m08:18:22.927172 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_luxe_training'
+[0m08:18:23.023545 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training"
+[0m08:18:23.024200 [debug] [ThreadPool]: On list_luxe_training: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training"} */
+show terse schemas in database luxe_training
+    limit 10000
+[0m08:18:23.024667 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:18:23.899168 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.874 seconds
+[0m08:18:23.907824 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_luxe_training, now list_luxe_training_dwh)
+[0m08:18:23.920248 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m08:18:23.920760 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m08:18:23.921172 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:18:24.395333 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.474 seconds
+[0m08:18:24.399880 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m08:18:24.400367 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+show objects in luxe_training.dwh
+    limit 10000
+    
+;
+[0m08:18:24.573176 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 0.172 seconds
+[0m08:18:24.576651 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m08:18:24.577176 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m08:18:24.641037 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.063 seconds
+[0m08:18:24.660905 [debug] [Thread-2 (]: Began running node model.luxe_training.fact_stock
+[0m08:18:24.661738 [info ] [Thread-2 (]: 1 of 1 START sql table model dwh.fact_stock .................................... [RUN]
+[0m08:18:24.662416 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_luxe_training_dwh, now model.luxe_training.fact_stock)
+[0m08:18:24.662921 [debug] [Thread-2 (]: Began compiling node model.luxe_training.fact_stock
+[0m08:18:24.672004 [debug] [Thread-2 (]: Writing injected SQL for node "model.luxe_training.fact_stock"
+[0m08:18:24.672688 [debug] [Thread-2 (]: Began executing node model.luxe_training.fact_stock
+[0m08:18:24.704993 [debug] [Thread-2 (]: Writing runtime sql for node "model.luxe_training.fact_stock"
+[0m08:18:24.706488 [debug] [Thread-2 (]: Using snowflake connection "model.luxe_training.fact_stock"
+[0m08:18:24.707041 [debug] [Thread-2 (]: On model.luxe_training.fact_stock: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "node_id": "model.luxe_training.fact_stock"} */
+create or replace transient table luxe_training.dwh.fact_stock
+         as
+        (SELECT
+    i.product_id,
+    i.store_id,
+    i.stock_available,
+
+    s1.qty_sold_30d,
+    s1.avg_daily_sales,
+    s1.stock_coverage_days,
+
+    s2.days_observed,
+    s2.stockout_days,
+    s2.stockout_rate
+
+FROM luxe_training.dwh.int_inventory_current i
+
+LEFT JOIN luxe_training.dwh.fact_stock_coverage s1
+    ON i.product_id = s1.product_id
+    AND i.store_id = s1.store_id
+
+LEFT JOIN luxe_training.dwh.fact_stockout_rate s2
+    ON i.product_id = s2.product_id
+    AND i.store_id = s2.store_id
+        );
+[0m08:18:24.707619 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:18:25.235617 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c74f36-0002-1df7-0002-c11a0020bb82
+[0m08:18:25.236263 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 000904 (42000): SQL compilation error: error line 6 at position 4
+invalid identifier 'I.STOCK_AVAILABLE'
+[0m08:18:25.240160 [debug] [Thread-2 (]: Database Error in model fact_stock (models/marts/fact_stock.sql)
+  000904 (42000): SQL compilation error: error line 6 at position 4
+  invalid identifier 'I.STOCK_AVAILABLE'
+  compiled code at target/run/luxe_training/models/marts/fact_stock.sql
+[0m08:18:25.242700 [error] [Thread-2 (]: 1 of 1 ERROR creating sql table model dwh.fact_stock ........................... [[31mERROR[0m in 0.58s]
+[0m08:18:25.243424 [debug] [Thread-2 (]: Finished running node model.luxe_training.fact_stock
+[0m08:18:25.244248 [debug] [Thread-12 ]: Marking all children of 'model.luxe_training.fact_stock' to be skipped because of status 'error'.  Reason: Database Error in model fact_stock (models/marts/fact_stock.sql)
+  000904 (42000): SQL compilation error: error line 6 at position 4
+  invalid identifier 'I.STOCK_AVAILABLE'
+  compiled code at target/run/luxe_training/models/marts/fact_stock.sql.
+[0m08:18:25.248346 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m08:18:25.248821 [debug] [Dummy-1   ]: Connection 'model.luxe_training.fact_stock' was properly closed.
+[0m08:18:25.249275 [info ] [Dummy-1   ]: 
+[0m08:18:25.249752 [info ] [Dummy-1   ]: Finished running 1 table model in 0 hours 0 minutes and 2.32 seconds (2.32s).
+[0m08:18:25.250507 [debug] [Dummy-1   ]: Command end result
+[0m08:18:25.276882 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:18:25.278810 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:18:25.284782 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m08:18:25.285255 [info ] [Dummy-1   ]: 
+[0m08:18:25.285823 [info ] [Dummy-1   ]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m08:18:25.286271 [info ] [Dummy-1   ]: 
+[0m08:18:25.286808 [error] [Dummy-1   ]:   Database Error in model fact_stock (models/marts/fact_stock.sql)
+  000904 (42000): SQL compilation error: error line 6 at position 4
+  invalid identifier 'I.STOCK_AVAILABLE'
+  compiled code at target/run/luxe_training/models/marts/fact_stock.sql
+[0m08:18:25.287220 [info ] [Dummy-1   ]: 
+[0m08:18:25.287727 [info ] [Dummy-1   ]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m08:18:25.289384 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 4.0258994, "process_in_blocks": "0", "process_kernel_time": 0.88, "process_mem_max_rss": "527548", "process_out_blocks": "0", "process_user_time": 4.23}
+[0m08:18:25.290016 [debug] [Dummy-1   ]: Command `cli run` failed at 08:18:25.289757 after 4.03 seconds
+[0m08:18:25.290525 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 08:20:16.759192 | 40ec7e07-e0e7-403c-a367-e40e46bf53ac ==============================
+[0m08:20:16.759192 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m08:20:16.760077 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt_effective_profiles__9iu0fmu', 'debug': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m08:20:17.032585 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m08:20:17.571132 [debug] [Dummy-1   ]: checksum: 7a8296c70615f566de89055485ae13d89ed1d40af3cf21b3b72f2284f73c401a, vars: {}, profile: , target: dwh, version: 1.9.4
+[0m08:20:17.799940 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m08:20:17.800768 [debug] [Dummy-1   ]: Partial parsing: updated file: luxe_training://models/marts/fact_stock.sql
+[0m08:20:18.301555 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:20:18.303526 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:20:18.347840 [info ] [Dummy-1   ]: Found 17 models, 7 data tests, 6 sources, 474 macros
+[0m08:20:18.350478 [info ] [Dummy-1   ]: 
+[0m08:20:18.351006 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dwh')
+[0m08:20:18.351508 [info ] [Dummy-1   ]: 
+[0m08:20:18.352323 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m08:20:18.354801 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_luxe_training'
+[0m08:20:18.448897 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training"
+[0m08:20:18.449466 [debug] [ThreadPool]: On list_luxe_training: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training"} */
+show terse schemas in database luxe_training
+    limit 10000
+[0m08:20:18.450002 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:20:19.364196 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.914 seconds
+[0m08:20:19.372699 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_luxe_training, now list_luxe_training_dwh)
+[0m08:20:19.385020 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m08:20:19.385528 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m08:20:19.386029 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:20:20.206281 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.820 seconds
+[0m08:20:20.210690 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m08:20:20.211173 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+show objects in luxe_training.dwh
+    limit 10000
+    
+;
+[0m08:20:20.407732 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 0.196 seconds
+[0m08:20:20.411207 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m08:20:20.411729 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m08:20:20.512210 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.100 seconds
+[0m08:20:20.532637 [debug] [Thread-2 (]: Began running node model.luxe_training.fact_stock
+[0m08:20:20.533382 [info ] [Thread-2 (]: 1 of 1 START sql table model dwh.fact_stock .................................... [RUN]
+[0m08:20:20.534090 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_luxe_training_dwh, now model.luxe_training.fact_stock)
+[0m08:20:20.534621 [debug] [Thread-2 (]: Began compiling node model.luxe_training.fact_stock
+[0m08:20:20.543608 [debug] [Thread-2 (]: Writing injected SQL for node "model.luxe_training.fact_stock"
+[0m08:20:20.544311 [debug] [Thread-2 (]: Began executing node model.luxe_training.fact_stock
+[0m08:20:20.576232 [debug] [Thread-2 (]: Writing runtime sql for node "model.luxe_training.fact_stock"
+[0m08:20:20.577752 [debug] [Thread-2 (]: Using snowflake connection "model.luxe_training.fact_stock"
+[0m08:20:20.578340 [debug] [Thread-2 (]: On model.luxe_training.fact_stock: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "node_id": "model.luxe_training.fact_stock"} */
+create or replace transient table luxe_training.dwh.fact_stock
+         as
+        (SELECT
+    i.product_id,
+    i.store_id,
+    i.stock_qty,
+
+    s1.qty_sold_30d,
+    s1.avg_daily_sales,
+    s1.stock_coverage_days,
+
+    s2.days_observed,
+    s2.stockout_days,
+    s2.stockout_rate
+
+FROM luxe_training.dwh.int_inventory_current i
+
+LEFT JOIN luxe_training.dwh.fact_stock_coverage s1
+    ON i.product_id = s1.product_id
+    AND i.store_id = s1.store_id
+
+LEFT JOIN luxe_training.dwh.fact_stockout_rate s2
+    ON i.product_id = s2.product_id
+    AND i.store_id = s2.store_id
+        );
+[0m08:20:20.578839 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:20:23.159651 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 2.581 seconds
+[0m08:20:23.182689 [info ] [Thread-2 (]: 1 of 1 OK created sql table model dwh.fact_stock ............................... [[32mSUCCESS 1[0m in 2.65s]
+[0m08:20:23.183460 [debug] [Thread-2 (]: Finished running node model.luxe_training.fact_stock
+[0m08:20:23.186938 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m08:20:23.187423 [debug] [Dummy-1   ]: Connection 'model.luxe_training.fact_stock' was properly closed.
+[0m08:20:23.187899 [info ] [Dummy-1   ]: 
+[0m08:20:23.188395 [info ] [Dummy-1   ]: Finished running 1 table model in 0 hours 0 minutes and 4.84 seconds (4.84s).
+[0m08:20:23.189170 [debug] [Dummy-1   ]: Command end result
+[0m08:20:23.214872 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:20:23.216553 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:20:23.222238 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m08:20:23.222711 [info ] [Dummy-1   ]: 
+[0m08:20:23.223350 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m08:20:23.223841 [info ] [Dummy-1   ]: 
+[0m08:20:23.224373 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m08:20:23.226091 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.53995, "process_in_blocks": "0", "process_kernel_time": 0.82, "process_mem_max_rss": "546128", "process_out_blocks": "0", "process_user_time": 4.37}
+[0m08:20:23.226726 [debug] [Dummy-1   ]: Command `cli run` succeeded at 08:20:23.226467 after 6.54 seconds
+[0m08:20:23.227247 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 08:27:55.599303 | f872acec-1869-49b6-892a-01369d5736c4 ==============================
+[0m08:27:55.599303 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m08:27:55.600088 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt_effective_profiles_m_blyumu', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m08:27:55.868808 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m08:27:56.412759 [debug] [Dummy-1   ]: checksum: 7a8296c70615f566de89055485ae13d89ed1d40af3cf21b3b72f2284f73c401a, vars: {}, profile: , target: dwh, version: 1.9.4
+[0m08:27:56.642330 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:27:56.642871 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:27:56.834052 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:27:56.835947 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:27:56.870012 [info ] [Dummy-1   ]: Found 17 models, 7 data tests, 6 sources, 474 macros
+[0m08:27:56.872718 [info ] [Dummy-1   ]: 
+[0m08:27:56.873258 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dwh')
+[0m08:27:56.873756 [info ] [Dummy-1   ]: 
+[0m08:27:56.874519 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m08:27:56.881159 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_luxe_training_dwh'
+[0m08:27:56.985153 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m08:27:56.985770 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m08:27:56.986229 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:27:57.432083 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.446 seconds
+[0m08:27:57.436517 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m08:27:57.437011 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+show objects in luxe_training.dwh
+    limit 10000
+    
+;
+[0m08:27:57.549943 [debug] [ThreadPool]: SQL status: SUCCESS 17 in 0.112 seconds
+[0m08:27:57.552512 [debug] [ThreadPool]: Using snowflake connection "list_luxe_training_dwh"
+[0m08:27:57.552982 [debug] [ThreadPool]: On list_luxe_training_dwh: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "luxe_training", "target_name": "dwh", "connection_name": "list_luxe_training_dwh"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m08:27:57.614766 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.061 seconds
+[0m08:27:57.635047 [debug] [Thread-2 (]: Began running node model.luxe_training.stg_customers
+[0m08:27:57.635633 [debug] [Thread-3 (]: Began running node model.luxe_training.stg_inventory
+[0m08:27:57.636166 [debug] [Thread-4 (]: Began running node model.luxe_training.stg_products
+[0m08:27:57.636804 [debug] [Thread-5 (]: Began running node model.luxe_training.stg_sales
+[0m08:27:57.637318 [debug] [Thread-6 (]: Began running node model.luxe_training.stg_stores
+[0m08:27:57.637965 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_luxe_training_dwh, now model.luxe_training.stg_customers)
+[0m08:27:57.638599 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.luxe_training.stg_inventory'
+[0m08:27:57.639224 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.luxe_training.stg_products'
+[0m08:27:57.639808 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.luxe_training.stg_sales'
+[0m08:27:57.640438 [debug] [Thread-6 (]: Acquiring new snowflake connection 'model.luxe_training.stg_stores'
+[0m08:27:57.640955 [debug] [Thread-2 (]: Began compiling node model.luxe_training.stg_customers
+[0m08:27:57.641441 [debug] [Thread-3 (]: Began compiling node model.luxe_training.stg_inventory
+[0m08:27:57.641996 [debug] [Thread-4 (]: Began compiling node model.luxe_training.stg_products
+[0m08:27:57.642489 [debug] [Thread-5 (]: Began compiling node model.luxe_training.stg_sales
+[0m08:27:57.642977 [debug] [Thread-6 (]: Began compiling node model.luxe_training.stg_stores
+[0m08:27:57.651449 [debug] [Thread-2 (]: Writing injected SQL for node "model.luxe_training.stg_customers"
+[0m08:27:57.655415 [debug] [Thread-3 (]: Writing injected SQL for node "model.luxe_training.stg_inventory"
+[0m08:27:57.660233 [debug] [Thread-4 (]: Writing injected SQL for node "model.luxe_training.stg_products"
+[0m08:27:57.664164 [debug] [Thread-5 (]: Writing injected SQL for node "model.luxe_training.stg_sales"
+[0m08:27:57.667965 [debug] [Thread-6 (]: Writing injected SQL for node "model.luxe_training.stg_stores"
+[0m08:27:57.669001 [debug] [Thread-2 (]: Began executing node model.luxe_training.stg_customers
+[0m08:27:57.669768 [debug] [Thread-3 (]: Began executing node model.luxe_training.stg_inventory
+[0m08:27:57.670625 [debug] [Thread-4 (]: Began executing node model.luxe_training.stg_products
+[0m08:27:57.671391 [debug] [Thread-5 (]: Began executing node model.luxe_training.stg_sales
+[0m08:27:57.672431 [debug] [Thread-2 (]: Finished running node model.luxe_training.stg_customers
+[0m08:27:57.672979 [debug] [Thread-6 (]: Began executing node model.luxe_training.stg_stores
+[0m08:27:57.673808 [debug] [Thread-3 (]: Finished running node model.luxe_training.stg_inventory
+[0m08:27:57.674556 [debug] [Thread-4 (]: Finished running node model.luxe_training.stg_products
+[0m08:27:57.675291 [debug] [Thread-5 (]: Finished running node model.luxe_training.stg_sales
+[0m08:27:57.676272 [debug] [Thread-8 (]: Began running node model.luxe_training.dim_customer
+[0m08:27:57.677052 [debug] [Thread-6 (]: Finished running node model.luxe_training.stg_stores
+[0m08:27:57.678083 [debug] [Thread-7 (]: Began running node model.luxe_training.fact_inventory
+[0m08:27:57.678644 [debug] [Thread-2 (]: Began running node model.luxe_training.int_inventory_current
+[0m08:27:57.679510 [debug] [Thread-3 (]: Began running node model.luxe_training.dim_product
+[0m08:27:57.680381 [debug] [Thread-4 (]: Began running node model.luxe_training.fact_sales
+[0m08:27:57.680941 [debug] [Thread-9 (]: Began running node model.luxe_training.int_sales_30d
+[0m08:27:57.681670 [debug] [Thread-8 (]: Acquiring new snowflake connection 'model.luxe_training.dim_customer'
+[0m08:27:57.682453 [debug] [Thread-5 (]: Began running node model.luxe_training.dim_store
+[0m08:27:57.683092 [debug] [Thread-7 (]: Acquiring new snowflake connection 'model.luxe_training.fact_inventory'
+[0m08:27:57.683827 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.luxe_training.stg_customers, now model.luxe_training.int_inventory_current)
+[0m08:27:57.684382 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.luxe_training.stg_inventory, now model.luxe_training.dim_product)
+[0m08:27:57.684917 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.luxe_training.stg_products, now model.luxe_training.fact_sales)
+[0m08:27:57.685573 [debug] [Thread-9 (]: Acquiring new snowflake connection 'model.luxe_training.int_sales_30d'
+[0m08:27:57.686058 [debug] [Thread-8 (]: Began compiling node model.luxe_training.dim_customer
+[0m08:27:57.686588 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.luxe_training.stg_sales, now model.luxe_training.dim_store)
+[0m08:27:57.687066 [debug] [Thread-7 (]: Began compiling node model.luxe_training.fact_inventory
+[0m08:27:57.687530 [debug] [Thread-2 (]: Began compiling node model.luxe_training.int_inventory_current
+[0m08:27:57.687976 [debug] [Thread-3 (]: Began compiling node model.luxe_training.dim_product
+[0m08:27:57.688439 [debug] [Thread-4 (]: Began compiling node model.luxe_training.fact_sales
+[0m08:27:57.688896 [debug] [Thread-9 (]: Began compiling node model.luxe_training.int_sales_30d
+[0m08:27:57.692791 [debug] [Thread-8 (]: Writing injected SQL for node "model.luxe_training.dim_customer"
+[0m08:27:57.693337 [debug] [Thread-5 (]: Began compiling node model.luxe_training.dim_store
+[0m08:27:57.697244 [debug] [Thread-7 (]: Writing injected SQL for node "model.luxe_training.fact_inventory"
+[0m08:27:57.702251 [debug] [Thread-2 (]: Writing injected SQL for node "model.luxe_training.int_inventory_current"
+[0m08:27:57.705923 [debug] [Thread-3 (]: Writing injected SQL for node "model.luxe_training.dim_product"
+[0m08:27:57.709435 [debug] [Thread-4 (]: Writing injected SQL for node "model.luxe_training.fact_sales"
+[0m08:27:57.713208 [debug] [Thread-9 (]: Writing injected SQL for node "model.luxe_training.int_sales_30d"
+[0m08:27:57.717033 [debug] [Thread-5 (]: Writing injected SQL for node "model.luxe_training.dim_store"
+[0m08:27:57.717668 [debug] [Thread-8 (]: Began executing node model.luxe_training.dim_customer
+[0m08:27:57.718690 [debug] [Thread-7 (]: Began executing node model.luxe_training.fact_inventory
+[0m08:27:57.719393 [debug] [Thread-2 (]: Began executing node model.luxe_training.int_inventory_current
+[0m08:27:57.720219 [debug] [Thread-3 (]: Began executing node model.luxe_training.dim_product
+[0m08:27:57.721039 [debug] [Thread-4 (]: Began executing node model.luxe_training.fact_sales
+[0m08:27:57.721928 [debug] [Thread-9 (]: Began executing node model.luxe_training.int_sales_30d
+[0m08:27:57.722815 [debug] [Thread-8 (]: Finished running node model.luxe_training.dim_customer
+[0m08:27:57.723407 [debug] [Thread-5 (]: Began executing node model.luxe_training.dim_store
+[0m08:27:57.724156 [debug] [Thread-7 (]: Finished running node model.luxe_training.fact_inventory
+[0m08:27:57.724911 [debug] [Thread-2 (]: Finished running node model.luxe_training.int_inventory_current
+[0m08:27:57.725685 [debug] [Thread-3 (]: Finished running node model.luxe_training.dim_product
+[0m08:27:57.726430 [debug] [Thread-4 (]: Finished running node model.luxe_training.fact_sales
+[0m08:27:57.727125 [debug] [Thread-9 (]: Finished running node model.luxe_training.int_sales_30d
+[0m08:27:57.728062 [debug] [Thread-5 (]: Finished running node model.luxe_training.dim_store
+[0m08:27:57.728892 [debug] [Thread-6 (]: Began running node model.luxe_training.int_inventory_stockout
+[0m08:27:57.729915 [debug] [Thread-7 (]: Began running node test.luxe_training.not_null_dim_product_product_id.02b1f06816
+[0m08:27:57.730413 [debug] [Thread-8 (]: Began running node test.luxe_training.unique_dim_product_product_id.46495bf7fe
+[0m08:27:57.731250 [debug] [Thread-3 (]: Began running node test.luxe_training.not_null_fact_sales_quantity.123217c37f
+[0m08:27:57.731760 [debug] [Thread-2 (]: Began running node test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100
+[0m08:27:57.732247 [debug] [Thread-9 (]: Began running node test.luxe_training.unique_fact_sales_sale_id.16dc554bac
+[0m08:27:57.732962 [debug] [Thread-4 (]: Began running node model.luxe_training.fact_stock_coverage
+[0m08:27:57.733486 [debug] [Thread-5 (]: Began running node model.luxe_training.fact_stock_coverage2
+[0m08:27:57.734255 [debug] [Thread-6 (]: Re-using an available connection from the pool (formerly model.luxe_training.stg_stores, now model.luxe_training.int_inventory_stockout)
+[0m08:27:57.734794 [debug] [Thread-7 (]: Re-using an available connection from the pool (formerly model.luxe_training.fact_inventory, now test.luxe_training.not_null_dim_product_product_id.02b1f06816)
+[0m08:27:57.735328 [debug] [Thread-8 (]: Re-using an available connection from the pool (formerly model.luxe_training.dim_customer, now test.luxe_training.unique_dim_product_product_id.46495bf7fe)
+[0m08:27:57.735880 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.luxe_training.dim_product, now test.luxe_training.not_null_fact_sales_quantity.123217c37f)
+[0m08:27:57.736431 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.luxe_training.int_inventory_current, now test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100)
+[0m08:27:57.736949 [debug] [Thread-9 (]: Re-using an available connection from the pool (formerly model.luxe_training.int_sales_30d, now test.luxe_training.unique_fact_sales_sale_id.16dc554bac)
+[0m08:27:57.737482 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.luxe_training.fact_sales, now model.luxe_training.fact_stock_coverage)
+[0m08:27:57.738084 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.luxe_training.dim_store, now model.luxe_training.fact_stock_coverage2)
+[0m08:27:57.738588 [debug] [Thread-6 (]: Began compiling node model.luxe_training.int_inventory_stockout
+[0m08:27:57.739076 [debug] [Thread-7 (]: Began compiling node test.luxe_training.not_null_dim_product_product_id.02b1f06816
+[0m08:27:57.739531 [debug] [Thread-8 (]: Began compiling node test.luxe_training.unique_dim_product_product_id.46495bf7fe
+[0m08:27:57.739977 [debug] [Thread-3 (]: Began compiling node test.luxe_training.not_null_fact_sales_quantity.123217c37f
+[0m08:27:57.740462 [debug] [Thread-2 (]: Began compiling node test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100
+[0m08:27:57.740945 [debug] [Thread-9 (]: Began compiling node test.luxe_training.unique_fact_sales_sale_id.16dc554bac
+[0m08:27:57.741424 [debug] [Thread-4 (]: Began compiling node model.luxe_training.fact_stock_coverage
+[0m08:27:57.741970 [debug] [Thread-5 (]: Began compiling node model.luxe_training.fact_stock_coverage2
+[0m08:27:57.747042 [debug] [Thread-6 (]: Writing injected SQL for node "model.luxe_training.int_inventory_stockout"
+[0m08:27:57.759630 [debug] [Thread-7 (]: Writing injected SQL for node "test.luxe_training.not_null_dim_product_product_id.02b1f06816"
+[0m08:27:57.766951 [debug] [Thread-8 (]: Writing injected SQL for node "test.luxe_training.unique_dim_product_product_id.46495bf7fe"
+[0m08:27:57.771817 [debug] [Thread-3 (]: Writing injected SQL for node "test.luxe_training.not_null_fact_sales_quantity.123217c37f"
+[0m08:27:57.776811 [debug] [Thread-2 (]: Writing injected SQL for node "test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100"
+[0m08:27:57.783028 [debug] [Thread-9 (]: Writing injected SQL for node "test.luxe_training.unique_fact_sales_sale_id.16dc554bac"
+[0m08:27:57.787001 [debug] [Thread-4 (]: Writing injected SQL for node "model.luxe_training.fact_stock_coverage"
+[0m08:27:57.810050 [debug] [Thread-5 (]: Writing injected SQL for node "model.luxe_training.fact_stock_coverage2"
+[0m08:27:57.810964 [debug] [Thread-6 (]: Began executing node model.luxe_training.int_inventory_stockout
+[0m08:27:57.811749 [debug] [Thread-7 (]: Began executing node test.luxe_training.not_null_dim_product_product_id.02b1f06816
+[0m08:27:57.812601 [debug] [Thread-8 (]: Began executing node test.luxe_training.unique_dim_product_product_id.46495bf7fe
+[0m08:27:57.813283 [debug] [Thread-3 (]: Began executing node test.luxe_training.not_null_fact_sales_quantity.123217c37f
+[0m08:27:57.814154 [debug] [Thread-2 (]: Began executing node test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100
+[0m08:27:57.814957 [debug] [Thread-9 (]: Began executing node test.luxe_training.unique_fact_sales_sale_id.16dc554bac
+[0m08:27:57.815602 [debug] [Thread-4 (]: Began executing node model.luxe_training.fact_stock_coverage
+[0m08:27:57.816458 [debug] [Thread-6 (]: Finished running node model.luxe_training.int_inventory_stockout
+[0m08:27:57.816993 [debug] [Thread-5 (]: Began executing node model.luxe_training.fact_stock_coverage2
+[0m08:27:57.817753 [debug] [Thread-7 (]: Finished running node test.luxe_training.not_null_dim_product_product_id.02b1f06816
+[0m08:27:57.818477 [debug] [Thread-8 (]: Finished running node test.luxe_training.unique_dim_product_product_id.46495bf7fe
+[0m08:27:57.819172 [debug] [Thread-3 (]: Finished running node test.luxe_training.not_null_fact_sales_quantity.123217c37f
+[0m08:27:57.819866 [debug] [Thread-2 (]: Finished running node test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100
+[0m08:27:57.820561 [debug] [Thread-9 (]: Finished running node test.luxe_training.unique_fact_sales_sale_id.16dc554bac
+[0m08:27:57.821275 [debug] [Thread-4 (]: Finished running node model.luxe_training.fact_stock_coverage
+[0m08:27:57.821893 [debug] [Thread-6 (]: Began running node test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0
+[0m08:27:57.822750 [debug] [Thread-5 (]: Finished running node model.luxe_training.fact_stock_coverage2
+[0m08:27:57.823275 [debug] [Thread-7 (]: Began running node test.luxe_training.unique_dim_store_store_id.90e408e197
+[0m08:27:57.823840 [debug] [Thread-8 (]: Began running node model.luxe_training.fact_stockout_rate
+[0m08:27:57.825000 [debug] [Thread-6 (]: Re-using an available connection from the pool (formerly model.luxe_training.int_inventory_stockout, now test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0)
+[0m08:27:57.825819 [debug] [Thread-7 (]: Re-using an available connection from the pool (formerly test.luxe_training.not_null_dim_product_product_id.02b1f06816, now test.luxe_training.unique_dim_store_store_id.90e408e197)
+[0m08:27:57.826386 [debug] [Thread-8 (]: Re-using an available connection from the pool (formerly test.luxe_training.unique_dim_product_product_id.46495bf7fe, now model.luxe_training.fact_stockout_rate)
+[0m08:27:57.826870 [debug] [Thread-6 (]: Began compiling node test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0
+[0m08:27:57.827335 [debug] [Thread-7 (]: Began compiling node test.luxe_training.unique_dim_store_store_id.90e408e197
+[0m08:27:57.827814 [debug] [Thread-8 (]: Began compiling node model.luxe_training.fact_stockout_rate
+[0m08:27:57.832753 [debug] [Thread-6 (]: Writing injected SQL for node "test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0"
+[0m08:27:57.839161 [debug] [Thread-7 (]: Writing injected SQL for node "test.luxe_training.unique_dim_store_store_id.90e408e197"
+[0m08:27:57.842773 [debug] [Thread-8 (]: Writing injected SQL for node "model.luxe_training.fact_stockout_rate"
+[0m08:27:57.843879 [debug] [Thread-6 (]: Began executing node test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0
+[0m08:27:57.844661 [debug] [Thread-7 (]: Began executing node test.luxe_training.unique_dim_store_store_id.90e408e197
+[0m08:27:57.845618 [debug] [Thread-6 (]: Finished running node test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0
+[0m08:27:57.846171 [debug] [Thread-8 (]: Began executing node model.luxe_training.fact_stockout_rate
+[0m08:27:57.846915 [debug] [Thread-7 (]: Finished running node test.luxe_training.unique_dim_store_store_id.90e408e197
+[0m08:27:57.847969 [debug] [Thread-8 (]: Finished running node model.luxe_training.fact_stockout_rate
+[0m08:27:57.849476 [debug] [Thread-3 (]: Began running node model.luxe_training.fact_stock
+[0m08:27:57.850346 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.luxe_training.not_null_fact_sales_quantity.123217c37f, now model.luxe_training.fact_stock)
+[0m08:27:57.850846 [debug] [Thread-3 (]: Began compiling node model.luxe_training.fact_stock
+[0m08:27:57.855185 [debug] [Thread-3 (]: Writing injected SQL for node "model.luxe_training.fact_stock"
+[0m08:27:57.855886 [debug] [Thread-3 (]: Began executing node model.luxe_training.fact_stock
+[0m08:27:57.856652 [debug] [Thread-3 (]: Finished running node model.luxe_training.fact_stock
+[0m08:27:57.859957 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m08:27:57.860453 [debug] [Dummy-1   ]: Connection 'test.luxe_training.not_null_fact_sales_sale_id.ea1dca7100' was properly closed.
+[0m08:27:57.860909 [debug] [Dummy-1   ]: Connection 'model.luxe_training.fact_stock' was properly closed.
+[0m08:27:57.861315 [debug] [Dummy-1   ]: Connection 'model.luxe_training.fact_stock_coverage' was properly closed.
+[0m08:27:57.861777 [debug] [Dummy-1   ]: Connection 'model.luxe_training.fact_stock_coverage2' was properly closed.
+[0m08:27:57.862172 [debug] [Dummy-1   ]: Connection 'test.luxe_training.not_null_dim_store_store_id.8cb7c6ace0' was properly closed.
+[0m08:27:57.862571 [debug] [Dummy-1   ]: Connection 'model.luxe_training.fact_stockout_rate' was properly closed.
+[0m08:27:57.862979 [debug] [Dummy-1   ]: Connection 'test.luxe_training.unique_dim_store_store_id.90e408e197' was properly closed.
+[0m08:27:57.863348 [debug] [Dummy-1   ]: Connection 'test.luxe_training.unique_fact_sales_sale_id.16dc554bac' was properly closed.
+[0m08:27:57.866437 [debug] [Dummy-1   ]: Command end result
+[0m08:27:57.892594 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:27:57.894400 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:27:57.901762 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m08:27:57.903421 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 2.3769934, "process_in_blocks": "0", "process_kernel_time": 0.81, "process_mem_max_rss": "475736", "process_out_blocks": "0", "process_user_time": 4.18}
+[0m08:27:57.904010 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 08:27:57.903774 after 2.38 seconds
+[0m08:27:57.904515 [debug] [Dummy-1   ]: Flushing usage events
