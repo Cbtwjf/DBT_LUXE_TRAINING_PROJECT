@@ -9,4 +9,4 @@ SELECT
         ELSE 0
     END AS is_stockout
 
-FROM {{ ref('fact_inventory') }}
+FROM luxe_training.dwh.fact_inventory
